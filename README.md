@@ -3,13 +3,13 @@ angular-wizard
 
 Native Angular.JS wizard directive
 
- Example usage:
+Example usage:
 
- In your template add tag:
+In your template add tag:
     
     <div data-wizard="wizardConfig"></div>
 
- Then in your controller create wizard configuration:
+Then in your controller create wizard configuration:
 
     $scope.wizardConfig = {
        steps: [
@@ -36,3 +36,5 @@ Native Angular.JS wizard directive
        ]
     }
     
+    
+Demo will live on http://sickelap.github.io/angular-wizard/demo
