@@ -7,7 +7,7 @@ Native Angular.JS wizard directive
 
  In your template add tag:
     
-    <div wizard="wizardConfig"></div>
+    <div data-wizard="wizardConfig"></div>
 
  Then in your controller create wizard configuration:
 
