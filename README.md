@@ -37,4 +37,4 @@ Then in your controller create wizard configuration:
     }
     
     
-Demo will live on http://sickelap.github.io/angular-wizard
+Demo: http://sickelap.github.io/angular-wizard
