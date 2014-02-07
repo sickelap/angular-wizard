@@ -1,0 +1,33 @@
+.wizard .wizard-breadcrumbs li {
+  display: inline-block;
+  padding: 5px 25px 5px 22px;
+  margin-right: 2px;
+}
+.wizard .wizard-breadcrumbs li a:hover {
+  text-decoration: none;
+}
+.wizard .wizard-breadcrumbs li.past {
+  background: #00aaad;
+}
+.wizard .wizard-breadcrumbs li.past a {
+  color: #FFF;
+}
+.wizard .wizard-breadcrumbs li.current {
+  background: #ef3c76;
+  color: #FFF;
+}
+.wizard .wizard-breadcrumbs li.future {
+  background: #EEE;
+  color: #000;
+}
+.wizard .wizard-steps {
+  list-style: none;
+  text-align: left;
+}
+.wizard .wizard-steps .wizard-step .wizard-step-nav .wizard-step-nav-prev {
+  float: left;
+}
+.wizard .wizard-steps .wizard-step .wizard-step-nav .wizard-step-nav-next {
+  float: right;
+}
+
