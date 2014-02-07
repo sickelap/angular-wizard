@@ -2,7 +2,7 @@
  * Angular Wizard directive
  * Copyright (c) 2014 Genadijus Paleckis (genadijus.paleckis@gmail.com)
  * License: MIT
- * GitHub: https://github.com/sickelap/angular-wizard
+ * GIT: https://github.com/sickelap/angular-wizard
  *
  * Example usage:
  *
@@ -68,13 +68,6 @@ angular.module('wizard', ['wizardStep'])
                 return (scope.config.steps[index].position === 'current');
             };
             scope.gotoStep = function (transitionTo) {
-                if (transitionTo >= scope.config.steps.length) {
-                    return; // last step
-                }
-                if (transitionTo < 0) {
-                    return; // first step
-                }
-
                 if (transitionTo > scope.currentStep) {
                     var step = scope.config.steps[scope.currentStep];
                     if (typeof step.callback === 'function') {
@@ -82,6 +75,13 @@ angular.module('wizard', ['wizardStep'])
                             return;
                         }
                     }
+                }
+
+                if (transitionTo >= scope.config.steps.length) {
+                    return; // last step
+                }
+                if (transitionTo < 0) {
+                    return; // first step
                 }
 
                 scope.currentStep = transitionTo;
@@ -136,7 +136,7 @@ angular.module('wizardStep', [])
             /**
              * interpolate template into the step's DOM
              */
-            element.prepend($templateCache.get(scope.config.templateUrl)).show();
+            element.prepend($templateCache.get(scope.config.templateUrl));
             $compile(element.contents())(scope);
 
             /**
@@ -152,6 +152,7 @@ angular.module('wizardStep', [])
                 wizard.goBack();
             };
             scope.goNext = function () {
+                // find a form in the scope
                 var formElm = element.find('form');
                 var form = scope[formElm.prop('name')];
 
@@ -164,9 +165,6 @@ angular.module('wizardStep', [])
                 if (form) { // Do we have a form with controller?
                     form.$setDirty();
                     formValid = form.$valid;
-                } else if (formElm) { // Do we have a form at all ?
-                    formElm.removeClass('ng-pristine').addClass('ng-dirty');
-                    formValid = (formElm.hasClass('ng-valid'));
                 }
 
                 if (formValid) {
